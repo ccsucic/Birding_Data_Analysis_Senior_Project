@@ -1,5 +1,5 @@
 # Birding Data Analysis - Senior Project
-Please note that this is not a finalized repository! I am currently refactoring the code to make it cleaner and more efficient.
+Please note that this is not a finalized repository! I am currently refactoring the code to make it cleaner and more efficient. The next portion to refactor is the Linear_Regression.py file, it is messy.
 
 Hello! My name is Conner Sucic and this was my senior capstone project for the Bachelor in Applied Computer Science from Birmingham-Southern College.
 
