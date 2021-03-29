@@ -1,0 +1,15 @@
+library(auk)
+auk_set_ebd_path("D:/eBird_Auk_Folder/ebd_US_relJan-2020", overwrite = TRUE)
+ebd_dir <- "D:/eBird_Auk_Folder/ebd_US_relJan-2020"
+f_in <- file.path(ebd_dir, "ebd_US_relJan-2020.txt")
+auk_get_ebd_path()
+print(f_in)
+f_out <- "ebd_warblers_2019.txt"
+species <- c("Ovenbird","Worm-eating Warbler","Louisiana Waterthrush","Northern Waterthrush","Golden-winged Warbler","Blue-winged Warbler","Black-and-white Warbler","Prothonotary Warbler","Swainson's Warbler","Tennessee Warbler","Orange-crowned Warbler","Nashville Warbler","Connecticut Warbler","Mourning Warbler","Kentucky Warbler","Common Yellowthroat","Hooded Warbler","American Redstart","Cape May Warbler","Cerulean Warbler","Northern Parula","Magnolia Warbler","Bay-breasted Warbler","Blackburnian Warbler","Yellow Warbler","Chestnut-sided Warbler","Blackpoll Warbler","Black-throated Blue Warbler","Palm Warbler","Pine Warbler","Yellow-rumped Warbler","Yellow-throated Warbler","Prairie Warbler","Black-throated Green Warbler","Canada Warbler","Wilson's Warbler")
+states <- c("US-AL","US-FL","US-GA","US-SC","US-NC","US-VA","US-MS","US-LA")
+date <- c("2019-01-01", "2019-12-31")
+ebd <- auk_ebd(f_in)
+ebd_filters <- auk_species(ebd, species)
+ebd_filters <- auk_state(ebd_filters, states)
+ebd_filters <- auk_date(ebd_filters, date)
+ebd_filtered <- auk_filter(ebd_filters, file = f_out)
